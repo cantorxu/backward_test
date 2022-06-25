@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+SET(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+add_subdirectory(./backward-cpp)
+add_executable(test test.cpp ${BACKWARD_ENABLE})
+target_link_libraries(test dw)
+add_backward(test)
